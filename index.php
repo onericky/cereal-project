@@ -122,6 +122,7 @@
 			    <input name="id_milk" id="milkForm" value="<?php echo $first_idMilk?>" style="display:none;">
 			</form>
 		</div>
+		<?php require("footer.php"); ?>
 	</body>
 </html>
 <?php mysqli_close($conn);?>

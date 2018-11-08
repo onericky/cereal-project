@@ -16,5 +16,6 @@ if(!isset($_POST['id_cereal']) or !isset($_POST['id_milk'])) {
 
 			</div>
 		</div>
+		<?php require("footer.php"); ?>
 	</body>
 </html>
