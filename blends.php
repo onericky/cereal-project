@@ -13,7 +13,7 @@ if($resultBlend->num_rows === 0 ) {
 } 
 
 $blend = $resultBlend->fetch_assoc();
-$imageRute = "./assets/images/blends/".$blend['name'].".png";
+$imageRute = "./assets/images/blends/".$blend['image'].".png";
 ?>
 
 <html lang="es">
@@ -21,15 +21,15 @@ $imageRute = "./assets/images/blends/".$blend['name'].".png";
 	<body>
 		<div class="container stuff">
 			<div class="alertBlend alert alert-success">
-				<strong>¡Excelente!</strong> A disfrutar este rico cereal <a href="#" class="alert-link"><?php echo $blend['name']?></a>.
+				<strong>¡Excelente!</strong> A disfrutar este rico cereal <a href="#" class="alert-link"><?= $blend['name']?></a>.
 			</div>
 			<div class="card">
 				<div class="card-body">
-					<h4 class="card-title"><?php echo $blend['name']?></h4>
-					<p class="card-text">Some example text some example text. Jane Doe is an architect and engineer</p>
+					<h4 class="card-title"><?= $blend['name']?></h4>
+					<p class="card-text"><?= utf8_decode($blend['description'])?></p>
 				</div>
 				<div class="imgwrapper">
-					<img class="card-img-bottom img-responsive imgBlend" src="<?php echo $imageRute?>" alt="Card image">
+					<img class="card-img-bottom img-responsive imgBlend" src="<?= $imageRute?>" alt="Card image">
 				</div>
   			</div>
 		</div>

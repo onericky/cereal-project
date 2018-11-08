@@ -25,6 +25,7 @@
 				centerPadding:'50px',
 				slidesToShow: 3,
 				dots: true,
+				arrows: true,
 				focusOnSelect: true,
 				responsive: [ {
 						breakpoint: 768,
@@ -51,6 +52,7 @@
 				centerPadding:'50px',
 				slidesToShow: 3,
 				dots: true,
+				arrows: true,
 				focusOnSelect: true,
 				responsive: [ {
 						breakpoint: 768,
@@ -90,6 +92,38 @@
 			$('#blendButton').click(function () {
 				$('#blendForm').submit();
 			});
+
+			$('.badgeCereal').click(function () {
+				var cerealName = $(this).html();
+				var cerealDescription = $('.'+cerealName+'Description').html();
+				cerealName = cerealName.charAt(0).toUpperCase() + cerealName.slice(1);
+				swal({
+					type: 'info',
+					title: cerealName,
+					text: cerealDescription,
+					padding: '3em',
+					background: '#fff',
+					animation: false,
+  					customClass: 'animated tada',
+  					allowOutsideClick: false
+				});
+			});
+
+			$('.badgeMilk').click(function () {
+				var milkName = $(this).html();
+				var milkDescription = $('.'+milkName+'Description').html();
+				milkName = milkName.charAt(0).toUpperCase() + milkName.slice(1);
+				swal({
+					type: 'info',
+					title: milkName,
+					text: milkDescription,
+					padding: '3em',
+					background: '#fff',
+					animation: false,
+  					customClass: 'animated bounce',
+  					allowOutsideClick: false
+				});
+			});
 		});	
 	</script>
 	<body>
@@ -97,10 +131,12 @@
 			<div class="outer">
 				<div class="cereals">
 					<?php while($row = $resultCereals->fetch_assoc()) { 
-						$imageRute = "./assets/images/cereals/".$row['name'].".png"?>
-	   					<div data-idc="<?php echo $row['id_cereal']?>">
-	   						<span class="badge badge-pill badge-light"><?php echo $row['name']?></span>
-	   						<img src="<?php echo $imageRute?>">
+						$imageRute = "./assets/images/cereals/".$row['name'].".png";
+						$description = $row['name']."Description";?>
+	   					<div data-idc="<?= $row['id_cereal']?>">
+	   						<p class="<?= $description?>" style="display: none"><?= $row['description']?></p>
+	   						<span class="badgeCereal badge badge-pill badge-secondary"><?= $row['name']?></span>
+	   						<img src="<?= $imageRute?>">
 	   					</div>
 					<?php }?>
 				</div>
@@ -109,10 +145,12 @@
 			<div class="outer">
 				<div class="milks">
 					<?php while($row = $resultMilks->fetch_assoc()) { 
-						$imageRute = "./assets/images/milks/".$row['name'].".png"?>
-	   					<div data-idm="<?php echo $row['id_milk']?>">
-	   						<span class="badge badge-pill badge-light"><?php echo $row['name']?></span>
-	   						<img src="<?php echo $imageRute?>">
+						$imageRute = "./assets/images/milks/".$row['name'].".png";
+						$description = $row['name']."Description";?>
+	   					<div data-idm="<?= $row['id_milk']?>">
+	   						<p class="<?= $description?>" style="display: none"><?= $row['description']?></p>
+	   						<span class="badgeMilk badge badge-pill badge-secondary"><?= $row['name']?></span>
+	   						<img src="<?= $imageRute?>">
 	   					</div>
 					<?php }?>
 				</div>
@@ -123,8 +161,8 @@
 			</div>
 
 			<form id="blendForm" method="post" action="./blends.php">
-			    <input name="id_cereal" id="cerealForm" value="<?php echo $first_idCereal?>" style="display:none;">
-			    <input name="id_milk" id="milkForm" value="<?php echo $first_idMilk?>" style="display:none;">
+			    <input name="id_cereal" id="cerealForm" value="<?= $first_idCereal?>" style="display:none;">
+			    <input name="id_milk" id="milkForm" value="<?= $first_idMilk?>" style="display:none;">
 			</form>
 		</div>
 		<?php require("footer.php"); ?>
