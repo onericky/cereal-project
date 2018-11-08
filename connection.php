@@ -1,7 +1,9 @@
 <?php 
 $servername = "localhost";
-$username = "homestead";
-$password = "secret";
+$username = "root";
+$password = "";
+//$username = "homestead";
+//$password = "secret";
 $database = "project_cereals";
 
 // Create connection

@@ -2,7 +2,7 @@
 	<?php 
 	require("header.php"); 
 	require("connection.php"); 
-	//execute the SQL query and return records
+	
 	$resultCereals = mysqli_query($conn, "SELECT * FROM Cereals");
 	$resultMilks = mysqli_query($conn, "SELECT * FROM Milks");
 	if($resultCereals->num_rows === 0 or $resultMilks->num_rows === 0) {
@@ -94,7 +94,7 @@
 	</script>
 	<!--$('#blendForm').submit(); -->
 	<body>
-		<div class="container">
+		<div class="container stuff">
 			<div class="outer">
 				<div class="cereals">
 					<?php while($row = $resultCereals->fetch_assoc()) { 
