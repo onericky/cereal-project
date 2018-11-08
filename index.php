@@ -90,16 +90,20 @@
 			$('#blendButton').click(function () {
 				$('#blendForm').submit();
 			});
+
+			$('[data-toggle="tooltip"]').tooltip(); 
 		});	
 	</script>
-	<!--$('#blendForm').submit(); -->
 	<body>
 		<div class="container stuff">
 			<div class="outer">
 				<div class="cereals">
 					<?php while($row = $resultCereals->fetch_assoc()) { 
 						$imageRute = "./assets/images/cereals/".$row['name'].".png"?>
-	   					<div data-idc="<?php echo $row['id_cereal']?>"><img src="<?php echo $imageRute?>"></div>
+	   					<div data-idc="<?php echo $row['id_cereal']?>">
+	   						<span class="badge badge-pill badge-light"><?php echo $row['name']?></span>
+	   						<img src="<?php echo $imageRute?>">
+	   					</div>
 					<?php }?>
 				</div>
 			</div>
@@ -108,7 +112,10 @@
 				<div class="milks">
 					<?php while($row = $resultMilks->fetch_assoc()) { 
 						$imageRute = "./assets/images/milks/".$row['name'].".png"?>
-	   					<div data-idm="<?php echo $row['id_milk']?>"><img src="<?php echo $imageRute?>"></div>
+	   					<div data-idm="<?php echo $row['id_milk']?>">
+	   						<span class="badge badge-pill badge-light"><?php echo $row['name']?></span>
+	   						<img src="<?php echo $imageRute?>">
+	   					</div>
 					<?php }?>
 				</div>
 			</div>
