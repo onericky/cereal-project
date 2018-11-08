@@ -90,8 +90,6 @@
 			$('#blendButton').click(function () {
 				$('#blendForm').submit();
 			});
-
-			$('[data-toggle="tooltip"]').tooltip(); 
 		});	
 	</script>
 	<body>
