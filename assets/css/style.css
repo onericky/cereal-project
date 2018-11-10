@@ -30,6 +30,10 @@
 	margin: 2% 0 3% 0;
 }
 
+.badgeCereal, .badgeMilk {
+	cursor: pointer;
+}
+
 #footer {
     background-color: #343a40;
     position: fixed; 
