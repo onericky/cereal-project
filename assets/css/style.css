@@ -1,5 +1,6 @@
-.body {
-	
+body {
+	min-height: 550px;
+	min-width: 270px;
 }
 
 .outer {
@@ -20,14 +21,14 @@
     margin: 0 auto;
 }
 
-.blend {
-	width: 30%;
-	margin: 3% auto;
-	margin-bottom: 10%
-}
-
 .alertBlend, .about {
 	margin: 2% 0 3% 0;
+}
+
+.blends {
+	margin:0 auto;
+	text-align: center;
+	padding-bottom: 2%;
 }
 
 .badgeCereal, .badgeMilk {
@@ -36,10 +37,11 @@
 
 #footer {
     background-color: #343a40;
-    position: fixed; 
-    width: 100%;
-    bottom: 0;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
     padding: 0.5rem 1rem 0.2rem 1rem;
+    font-size: small;
 }
 
 .stuff {

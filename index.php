@@ -156,8 +156,8 @@
 				</div>
 			</div>
 
-			<div class="blend">
-				<button type="button" id="blendButton" class="btn btn-outline-info btn-block btn-lg">Mezclar</button>
+			<div class="blends">
+				<button type="button" id="blendButton" class="btn btn-outline-info btn-lg col-xs-2 col-md-4">Mezclar</button>
 			</div>
 
 			<form id="blendForm" method="post" action="./blends.php">
